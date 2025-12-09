@@ -1,113 +1,134 @@
-📘 README Project 2 — Hidden & Security (CMD)
+NAMA : MOHAMAD ALFATIR ANGE
+NIM  :05301425082
+MATKUL: SISTEM OPERASI
 
-# 🔐 Project 2 – Hidden & Security (Command Prompt)
+📘 README Project 2 — Network Diagnostic Tool (FINAL)
+
+# 🌐 Project 2 – Network Diagnostic Tool (CMD)
 
 ## 🎯 Tujuan
-Menggunakan Command Prompt untuk:
-- Menyembunyikan file
-- Mengunci file dengan atribut (read-only)
-- Mengembalikan file seperti semula
-- Mengecek status atribut file
+Melakukan diagnosa jaringan menggunakan perintah Command Prompt untuk:
+- Mengecek konfigurasi jaringan
+- Mengetes koneksi internet
+- Mengetes DNS
+- Melacak rute internet
+- Melihat koneksi aktif
 
-Semua dilakukan menggunakan perintah attrib.
+Project ini penting untuk memahami dasar troubleshooting jaringan komputer.
 
 ---
 
-# 🟦 1. Membuat Folder dan File Contoh
+# 🟦 1. Membuka Command Prompt
 ```cmd
-mkdir SecurityFiles
-cd SecurityFiles
-echo Ini file rahasia > secret.txt
+Windows + R → cmd → Enter
 
 
 ---
 
-🟦 2. Menyembunyikan File (Hidden)
+🟦 2. Mengecek Konfigurasi Jaringan
 
-attrib +h secret.txt
+Perintah:
 
-✔ File tidak terlihat di File Explorer (kecuali show hidden aktif)
+ipconfig /all
+
+Fungsi:
+
+Menampilkan IP Address
+
+Subnet mask
+
+Default gateway
+
+DNS server
+
+MAC address
+
+Status adapter
 
 
----
-
-🟦 3. Mengunci File (Read-Only + System)
-
-attrib +s +r secret.txt
-
-Atribut yang ditambahkan:
-
-+s → System (file dianggap file sistem)
-
-+r → Read-only (tidak bisa di-edit)
-
-
-
----
-
-🟦 4. Mengecek Status Atribut
-
-attrib secret.txt
-
-Contoh output:
-
-SHR   secret.txt
-
-Artinya file mempunyai atribut:
-
-S = System
-
-H = Hidden
-
-R = Read-only
-
+Hasilnya menunjukkan seluruh detail jaringan yang aktif.
 
 
 ---
 
-🟦 5. Menampilkan Kembali File & Menghapus Kunci
+🟦 3. Mengetes Koneksi Internet (Ping DNS Google)
 
-Untuk mengembalikan file seperti semula:
+Perintah:
 
-attrib -h -s -r secret.txt
+ping 8.8.8.8
 
-✔ File kembali terlihat
-✔ Bisa dibuka dan diedit lagi
+Jika muncul:
 
+Reply from 8.8.8.8
 
----
-
-🟦 6. Penggunaan Tambahan (Opsional)
-
-Menyembunyikan semua file dalam folder:
-
-attrib +h .
-
-Menampilkan semua file:
-
-attrib -h .
-
-Menampilkan semua atribut file:
-
-attrib
+✔ Berarti koneksi internet stabil.
 
 
 ---
 
-🟩 Kesimpulan Project
+🟦 4. Tes DNS (Ubah Domain ke IP)
 
-✔ Berhasil membuat file
-✔ Berhasil menyembunyikan file
-✔ Berhasil memberi atribut Secure (System + Read-Only)
-✔ Berhasil mengembalikan file seperti semula
-✔ Sudah dicek menggunakan perintah attrib
+Perintah:
+
+ping google.com
+
+Fungsi:
+
+Mengecek apakah DNS berjalan normal
+
+Komputer harus bisa mengubah nama google.com menjadi IP address
+
 
 
 ---
 
-👤 Created By
+🟦 5. Melacak Jalur Internet (Traceroute)
 
-Nama: MOHAMAD ALFATIR ANGE
-NIM 05301425082
-Kelas: SI D 25
-Tahun: 2025
+Perintah:
+
+tracert google.com
+
+Fungsi:
+
+Melihat rute/hop dari komputer → router → ISP → server Google
+
+Mengetahui lokasi terjadinya delay jaringan
+
+
+Output berupa daftar hop seperti:
+
+1   2 ms   1 ms  192.168.1.1
+2  15 ms  12 ms  10.10.0.1
+...
+
+
+---
+
+🟦 6. Melihat Koneksi Aktif (Netstat)
+
+Perintah:
+
+netstat -an
+
+Fungsi:
+
+Menampilkan seluruh koneksi aktif
+
+Menunjukkan port yang digunakan komputer
+
+Melihat status seperti ESTABLISHED, LISTENING, TIME_WAIT
+
+
+
+---
+
+🟩 Kesimpulan Project 2
+
+Dalam Project ini telah dilakukan: ✔ Pemeriksaan konfigurasi IP
+✔ Tes ping ke DNS Google
+✔ Tes DNS menggunakan domain
+✔ Traceroute ke server Google
+✔ Pemeriksaan koneksi & port aktif menggunakan netstat
+
+Semua langkah ini digunakan untuk analisis dan troubleshooting jaringan dasar.
+
