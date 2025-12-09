@@ -2,7 +2,6 @@ NAMA : MOHAMAD ALFATIR ANGE
 NIM  :05301425082
 MATKUL: SISTEM OPERASI
 
-📘 README Project 2 — Network Diagnostic Tool (FINAL)
 
 # 🌐 Project 2 – Network Diagnostic Tool (CMD)
 
